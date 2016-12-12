@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Bus" representedClassName="Bus" parentEntity="GenericTrip" syncable="YES"/>
+    <entity name="Flight" representedClassName="Flight" parentEntity="GenericTrip" syncable="YES"/>
+    <entity name="GenericTrip" representedClassName="GenericTrip" isAbstract="YES" syncable="YES">
+        <attribute name="arrivalTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="departureTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="durationInMinutes" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="logoUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priceInEuros" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="stops" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tripId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Train" representedClassName="Train" parentEntity="GenericTrip" syncable="YES"/>
+    <elements>
+        <element name="Bus" positionX="-27" positionY="54" width="128" height="45"/>
+        <element name="Flight" positionX="-45" positionY="45" width="128" height="45"/>
+        <element name="GenericTrip" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Train" positionX="-9" positionY="63" width="128" height="45"/>
+    </elements>
+</model>

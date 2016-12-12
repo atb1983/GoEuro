@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TiG-rd-XvI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="8kw-LH-2Gy">
+            <objects>
+                <navigationController id="TiG-rd-XvI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hNT-Ek-S3f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pKu-rO-WAu" kind="relationship" relationship="rootViewController" id="qzN-hG-hT0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O8a-fS-aks" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="460" y="119"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="GZD-kO-mf5">
+            <objects>
+                <tabBarController id="pKu-rO-WAu" customClass="MainViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="jZW-s6-m3E"/>
+                    <tabBar key="tabBar" hidden="YES" contentMode="scaleToFill" id="HRT-Y3-Xnn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.18251758809999999" green="0.47971963880000001" blue="0.71858030559999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.18251758809999999" green="0.47971963880000001" blue="0.71858030559999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="bez-Fg-5vH" kind="relationship" relationship="viewControllers" id="LQw-L6-fhL"/>
+                        <segue destination="gcR-lV-d1c" kind="relationship" relationship="viewControllers" id="ZBH-hP-D4H"/>
+                        <segue destination="VRb-fL-CTc" kind="relationship" relationship="viewControllers" id="Uj7-xv-9lV"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NXy-Rz-TvB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1265" y="118"/>
+        </scene>
+        <!--Train View Controller-->
+        <scene sceneID="tCr-ZO-kfu">
+            <objects>
+                <viewController id="bez-Fg-5vH" customClass="TrainViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bw4-yv-Ltw"/>
+                        <viewControllerLayoutGuide type="bottom" id="oSZ-Vf-vH6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tyo-4e-pKz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yab-zt-r6B">
+                                <rect key="frame" x="0.0" y="20" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem title="Train" id="Udj-cE-UxG"/>
+                                    <tabBarItem title="Bus" id="63X-GM-TAa"/>
+                                    <tabBarItem title="Flight" id="8RL-tW-hwa"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="bez-Fg-5vH" id="pcT-cr-I61"/>
+                                </connections>
+                            </tabBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GKe-Ad-UYZ">
+                                <rect key="frame" x="0.0" y="69" width="375" height="505"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="bez-Fg-5vH" id="4VZ-sc-bu0"/>
+                                    <outlet property="delegate" destination="bez-Fg-5vH" id="Dw9-uf-vdu"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uNX-Bm-BGr">
+                                <rect key="frame" x="0.0" y="574" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="SortIcon" id="frb-Y3-EIs">
+                                        <connections>
+                                            <action selector="sortButtonPressed:" destination="bez-Fg-5vH" id="NPg-EV-QOS"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="uNX-Bm-BGr" secondAttribute="trailing" id="70d-Xt-rtN"/>
+                            <constraint firstItem="Yab-zt-r6B" firstAttribute="leading" secondItem="Tyo-4e-pKz" secondAttribute="leading" id="7m8-Nu-aN9"/>
+                            <constraint firstItem="GKe-Ad-UYZ" firstAttribute="leading" secondItem="Tyo-4e-pKz" secondAttribute="leadingMargin" constant="-16" id="82P-kX-4SY"/>
+                            <constraint firstItem="Yab-zt-r6B" firstAttribute="top" secondItem="bw4-yv-Ltw" secondAttribute="bottom" id="9QH-tc-25l"/>
+                            <constraint firstItem="GKe-Ad-UYZ" firstAttribute="top" secondItem="Yab-zt-r6B" secondAttribute="bottom" id="9R9-Jn-I85"/>
+                            <constraint firstItem="oSZ-Vf-vH6" firstAttribute="top" secondItem="uNX-Bm-BGr" secondAttribute="bottom" id="Pr4-31-nCk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GKe-Ad-UYZ" secondAttribute="trailing" constant="-16" id="XLh-UM-3WZ"/>
+                            <constraint firstItem="uNX-Bm-BGr" firstAttribute="leading" secondItem="Tyo-4e-pKz" secondAttribute="leading" id="inB-68-t7T"/>
+                            <constraint firstItem="uNX-Bm-BGr" firstAttribute="top" secondItem="GKe-Ad-UYZ" secondAttribute="bottom" id="n0S-u9-m06"/>
+                            <constraint firstAttribute="trailing" secondItem="Yab-zt-r6B" secondAttribute="trailing" id="oAq-Pw-kFe"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" id="1gE-lo-BoR"/>
+                    <navigationItem key="navigationItem" id="XWY-md-WYT"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="busTabBarItem" destination="63X-GM-TAa" id="pbA-L8-hCT"/>
+                        <outlet property="flightTabBarItem" destination="8RL-tW-hwa" id="ZRc-bY-fWs"/>
+                        <outlet property="tabBar" destination="Yab-zt-r6B" id="Vyf-Lt-hTj"/>
+                        <outlet property="tableView" destination="GKe-Ad-UYZ" id="if3-k3-vPo"/>
+                        <outlet property="trainTabBarItem" destination="Udj-cE-UxG" id="osM-en-5hO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2YY-gx-pOm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2212" y="-301"/>
+        </scene>
+        <!--Flight View Controller-->
+        <scene sceneID="XXZ-v8-xdW">
+            <objects>
+                <viewController id="VRb-fL-CTc" customClass="FlightViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bcf-X7-SRD"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jw2-Rs-p6G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fII-Tn-1Af">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kl5-lC-fUE">
+                                <rect key="frame" x="0.0" y="64" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem title="Train" id="3Rn-fc-0lg"/>
+                                    <tabBarItem title="Bus" id="I19-6D-3Li"/>
+                                    <tabBarItem title="Flight" id="XrW-yL-fbP"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="VRb-fL-CTc" id="r6A-0d-HH6"/>
+                                </connections>
+                            </tabBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Ia-rS-4XM">
+                                <rect key="frame" x="0.0" y="113" width="375" height="461"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="VRb-fL-CTc" id="bfY-1f-bPE"/>
+                                    <outlet property="delegate" destination="VRb-fL-CTc" id="PYd-Ws-oog"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKt-Wh-UBp">
+                                <rect key="frame" x="0.0" y="574" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="SortIcon" id="qVV-En-6B6">
+                                        <connections>
+                                            <action selector="sortButtonPressed:" destination="VRb-fL-CTc" id="xKK-pA-gjd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Kl5-lC-fUE" firstAttribute="leading" secondItem="fII-Tn-1Af" secondAttribute="leading" id="EVP-2l-JYc"/>
+                            <constraint firstItem="Kl5-lC-fUE" firstAttribute="top" secondItem="bcf-X7-SRD" secondAttribute="bottom" id="GfB-ZZ-9kL"/>
+                            <constraint firstAttribute="trailing" secondItem="eKt-Wh-UBp" secondAttribute="trailing" id="Ghy-Fq-KQP"/>
+                            <constraint firstItem="eKt-Wh-UBp" firstAttribute="top" secondItem="9Ia-rS-4XM" secondAttribute="bottom" id="HMo-vk-sMu"/>
+                            <constraint firstItem="eKt-Wh-UBp" firstAttribute="leading" secondItem="fII-Tn-1Af" secondAttribute="leading" id="J4O-WG-atr"/>
+                            <constraint firstItem="9Ia-rS-4XM" firstAttribute="top" secondItem="Kl5-lC-fUE" secondAttribute="bottom" id="RdV-mU-hio"/>
+                            <constraint firstAttribute="trailing" secondItem="Kl5-lC-fUE" secondAttribute="trailing" id="oGa-5Y-F9r"/>
+                            <constraint firstItem="9Ia-rS-4XM" firstAttribute="leading" secondItem="fII-Tn-1Af" secondAttribute="leadingMargin" constant="-16" id="wx5-GF-jKB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9Ia-rS-4XM" secondAttribute="trailing" constant="-16" id="wyL-ik-svl"/>
+                            <constraint firstItem="Jw2-Rs-p6G" firstAttribute="top" secondItem="eKt-Wh-UBp" secondAttribute="bottom" id="xE1-qn-9BX"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" id="XKa-iS-vuB"/>
+                    <navigationItem key="navigationItem" id="X6s-OJ-3ln"/>
+                    <connections>
+                        <outlet property="busTabBarItem" destination="I19-6D-3Li" id="5sZ-Al-tBH"/>
+                        <outlet property="flightTabBarItem" destination="XrW-yL-fbP" id="ix0-FA-J4h"/>
+                        <outlet property="tabBar" destination="Kl5-lC-fUE" id="5ue-BV-S2V"/>
+                        <outlet property="tableView" destination="9Ia-rS-4XM" id="zXc-Nk-3cN"/>
+                        <outlet property="trainTabBarItem" destination="3Rn-fc-0lg" id="H8P-2s-Qdm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z2z-UV-rdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2212" y="1103"/>
+        </scene>
+        <!--Bus View Controller-->
+        <scene sceneID="7d5-ps-TIx">
+            <objects>
+                <viewController id="gcR-lV-d1c" customClass="BusViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JIF-n1-ewc"/>
+                        <viewControllerLayoutGuide type="bottom" id="jvn-cr-eBL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nzZ-bC-JID">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsx-LH-86J">
+                                <rect key="frame" x="0.0" y="64" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem title="Train" id="mt8-6j-V74"/>
+                                    <tabBarItem title="Bus" id="JVV-Ll-hRn"/>
+                                    <tabBarItem title="Flight" id="eNi-mW-xtT"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="gcR-lV-d1c" id="ASX-9m-JYW"/>
+                                </connections>
+                            </tabBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g2i-xK-xs0">
+                                <rect key="frame" x="0.0" y="113" width="375" height="461"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="gcR-lV-d1c" id="ODZ-WF-cXg"/>
+                                    <outlet property="delegate" destination="gcR-lV-d1c" id="uqy-R6-MPL"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFo-1Q-CL6">
+                                <rect key="frame" x="0.0" y="574" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="SortIcon" id="p6O-8v-Vs4">
+                                        <connections>
+                                            <action selector="sortButtonPressed:" destination="gcR-lV-d1c" id="0FB-Dw-jNA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kFo-1Q-CL6" firstAttribute="top" secondItem="g2i-xK-xs0" secondAttribute="bottom" id="2gE-w5-wFw"/>
+                            <constraint firstItem="jvn-cr-eBL" firstAttribute="top" secondItem="kFo-1Q-CL6" secondAttribute="bottom" id="4nw-6Q-OUw"/>
+                            <constraint firstAttribute="trailing" secondItem="fsx-LH-86J" secondAttribute="trailing" id="7Q7-iW-cHG"/>
+                            <constraint firstItem="fsx-LH-86J" firstAttribute="top" secondItem="JIF-n1-ewc" secondAttribute="bottom" id="DS5-Io-gSY"/>
+                            <constraint firstItem="g2i-xK-xs0" firstAttribute="leading" secondItem="nzZ-bC-JID" secondAttribute="leadingMargin" constant="-16" id="ErO-zK-EZM"/>
+                            <constraint firstItem="g2i-xK-xs0" firstAttribute="top" secondItem="fsx-LH-86J" secondAttribute="bottom" id="GbS-zH-Dcv"/>
+                            <constraint firstAttribute="trailing" secondItem="kFo-1Q-CL6" secondAttribute="trailing" id="TjK-nq-x55"/>
+                            <constraint firstItem="kFo-1Q-CL6" firstAttribute="leading" secondItem="nzZ-bC-JID" secondAttribute="leading" id="Uck-ge-xyg"/>
+                            <constraint firstItem="fsx-LH-86J" firstAttribute="leading" secondItem="nzZ-bC-JID" secondAttribute="leading" id="ZTw-VT-21C"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g2i-xK-xs0" secondAttribute="trailing" constant="-16" id="qWi-uM-x1d"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" id="r4q-iV-9If"/>
+                    <navigationItem key="navigationItem" id="I9J-Vc-5PI"/>
+                    <connections>
+                        <outlet property="busTabBarItem" destination="JVV-Ll-hRn" id="ChU-U6-FaZ"/>
+                        <outlet property="flightTabBarItem" destination="eNi-mW-xtT" id="cRB-g4-e6k"/>
+                        <outlet property="tabBar" destination="fsx-LH-86J" id="o1y-lw-UAe"/>
+                        <outlet property="tableView" destination="g2i-xK-xs0" id="RcR-vD-XQI"/>
+                        <outlet property="trainTabBarItem" destination="mt8-6j-V74" id="X9s-jY-RRt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="guI-lm-UkH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2212" y="359"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="SortIcon" width="40" height="40"/>
+    </resources>
+</document>

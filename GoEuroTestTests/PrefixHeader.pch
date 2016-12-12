@@ -1,0 +1,17 @@
+//
+//  PrefixHeader.h
+//  GoEuroTestTests
+//
+//  Created by Alex Núñez on 11/12/2016.
+//  Copyright © 2016 Nice. All rights reserved.
+//
+
+#ifndef PrefixHeader_h
+#define PrefixHeader_h
+
+
+#endif /* PrefixHeader_h */
+
+#import <UIKit/UIKit.h>
+#import "GoEuroAPI.h"
+#import "CoredataController.h"
